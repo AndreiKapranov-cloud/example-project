@@ -8,7 +8,7 @@ import java.util.List;
 
 public final class DB {
 
-    private static final List<User> users = new LinkedList<>();
+    private static List<User> users = new LinkedList<>();
 
     private DB() {
     }
@@ -31,10 +31,19 @@ public final class DB {
     public static void print() {
         System.out.println("--------------------------DB--------------------------");
         users.forEach(System.out::println);
+        System.out.println("------------------------------------------------------");
     }
 
     public static void sort() {
         Collections.sort(users);
+    }
+
+    public static List<User> getUsers() {
+        return users;
+    }
+
+    public static void setUsers(List<User> users) {
+        DB.users = users;
     }
 
 }

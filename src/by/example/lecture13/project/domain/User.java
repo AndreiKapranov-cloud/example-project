@@ -1,12 +1,17 @@
 package by.example.lecture13.project.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class User implements Loggable, Comparable<User> {
+public abstract class User implements Loggable, Comparable<User>, Serializable {
 
+    private static final long serialVersionUID = 1L;
     protected String login;
     protected String password;
     protected boolean logged;
+
+    public User() {
+    }
 
     public User(String login, String password) {
         this.login = login;
